@@ -1,7 +1,7 @@
 # Flock
 a simulated flock of birds
 
-# How to run
+# Running Flock
 I highly suggest that you clone and run this program. Alternatively, you can go here: laphatize.github.io/github/flock/flock.html
 
 # Credit
