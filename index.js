@@ -1,49 +1,65 @@
-// FLOCK SIMULATOR 
 
 function setup() {
-createCanvas(500,500); // Creates Canvas
+  createCanvas(500, 500); 
+ 
 }
 
-var finalX;
-var finalY;
 
+var finalX; // This is the final X that has been determined.
+var finalY; // This is the final Y that has been determined.
+var distFromBird; // Calculate's the random coords generated and mouseX, mouseY distance.
+var soonBirdX; // Random generated X Value.
+var soonBirdY; // Random generated Y Value.
+
+/* Sleep Function */
 function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds) {
+      break;
     }
   }
+}
 
-  function drawBird() {
 
-    var soonBirdX = random(500)
-      var soonBirdY = random(500)
 
-  var distFromBirdX = int(dist(soonBirdX));
-    var distFromBirdY = int(dist(soonBirdX));
-      if (distFromBirdX > 10, distFromBirdY > 10 ) {
+/*  Second Bird */
+function drawBird() {
 
-drawBird()
+  soonBirdX = random(500);
+  soonBirdY = random(500);
+  console.log("randomX: " + soonBirdX);
+  console.log("randomY: " + soonBirdY);
+  distFromBird = int(dist(soonBirdX, soonBirdY, mouseX, mouseY));
+  
 
-} else
+  if (distFromBird > 50, distFromBird > 50) {
 
-var finalX = distFromBirdX;
-var finalY = distFromBirdY;
+    drawBird()
+
+  } else
+
+  finalX = soonBirdX;
+  finalY = soonBirdY;
 
 };
 
 
+/* Draws the main bird, bird that follows mouse pointer. */
 function draw() {
 
-    background(225,225,225);
-        textSize(30);
-        text("flock simulator", 100,30);
+  drawBird();
+  background(225, 225, 225);
+  textSize(30);
+  text("flock simulator", 150, 30);
+  textSize(20)
+  text("by Laphatize", 190, 50);
+  
 
-    ellipse(mouseX,mouseY,10,10); // Main ird
-        ellipse(finalX,finalY,50,50);
-
-          sleep(50)
-
+  ellipse(mouseX, mouseY, 10, 10); // Main Bird
+  ellipse(finalX, finalY, 10, 10);
+  console.log("finalX: " + finalX);
+  console.log("finalY: " +finalY);
+  
 }
+
